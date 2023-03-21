@@ -75,3 +75,5 @@ end
 
 gem 'jwt'
 gem "rack-cors"
+gem 'bootstrap', '~> 5.1'
+gem 'jquery-rails', '~> 4.4'
