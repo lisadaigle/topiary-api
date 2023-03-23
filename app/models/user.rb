@@ -4,4 +4,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   has_many :user_plants
   has_many :plants, through: :user_plants
+  has_many :carted_plants
 end
