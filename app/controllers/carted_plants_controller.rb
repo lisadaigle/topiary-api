@@ -12,6 +12,7 @@ class CartedPlantsController < ApplicationController
       amount_of_sun: params[:amount_of_sun],
       days_to_water: params[:days_to_water],
       user_id: params[:user_id],
+      image_url: params[:image_url],
     )
     render :show
   end

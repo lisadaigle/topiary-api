@@ -4,3 +4,4 @@ json.description carted_plant.description
 json.amount_of_sun carted_plant.amount_of_sun
 json.days_to_water carted_plant.days_to_water
 json.user_id carted_plant.user_id
+json.image_url carted_plant.image_url
