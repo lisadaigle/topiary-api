@@ -18,13 +18,18 @@ class CartedPlantsController < ApplicationController
   end
 
   def watering_schedule
+    plant_id = params[:plant_id]
     last_watered = params[:last_watered]
     last_watered_date = last_watered == "today" ? Date.today : Date.yesterday
-    schedule = CartedPlant.all.map do |plant|
-      next_watering_date = last_watered_date + plant.days_to_water.days
-      formatted_next_watering_date = next_watering_date.strftime("%B %d, %Y")
-      [plant.id, "The #{plant.name} needs to be watered on #{formatted_next_watering_date}."]
-    end.to_h
-    render json: schedule
+
+    puts "Last watered date: #{last_watered_date}" ##this is new
+    puts "Current timezone: #{Time.zone}" ##this is new
+
+    plant = CartedPlant.find(plant_id)
+    next_watering_date = last_watered_date + plant.days_to_water.days
+    formatted_next_watering_date = next_watering_date.strftime("%B %d, %Y")
+    schedule = "The #{plant.name} needs to be watered on #{formatted_next_watering_date}."
+
+    render json: { plant_id => schedule }
   end
 end

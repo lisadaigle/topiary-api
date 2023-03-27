@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get "/carted_plants" => "carted_plants#index"
   resources :carted_plants, only: [:create]
   post "/watering_schedule" => "carted_plants#watering_schedule"
+
+  get "/schedules" => "schedules#index"
+  post "/schedules" => "schedules#create"
 end

@@ -11,3 +11,9 @@ two:
   user_id: 1
   image_url: MyString
   watering_start_date: 2023-03-20 15:28:51
+
+three:
+  plant_id: 3
+  user_id: 3
+  image_url: "https://example.com/image3.jpg"
+  watering_start_date: "2023-03-22 15:28:51"
