@@ -32,4 +32,10 @@ class CartedPlantsController < ApplicationController
 
     render json: { plant_id => schedule }
   end
+
+  def destroy
+    @carted_plant = CartedPlant.find_by(id: params[:id])
+    @carted_plant.destroy
+    render json: { message: "Plant removed from your garden" }
+  end
 end

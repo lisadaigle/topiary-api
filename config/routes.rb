@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   get "/schedules" => "schedules#index"
   post "/schedules" => "schedules#create"
+  delete "/carted_plants/:id" => "carted_plants#destroy"
 end
