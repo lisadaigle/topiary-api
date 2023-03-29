@@ -22,8 +22,8 @@ class CartedPlantsController < ApplicationController
     last_watered = params[:last_watered]
     last_watered_date = last_watered == "today" ? Date.today : Date.yesterday
 
-    puts "Last watered date: #{last_watered_date}" ##this is new
-    puts "Current timezone: #{Time.zone}" ##this is new
+    puts "Last watered date: #{last_watered_date}"
+    puts "Current timezone: #{Time.zone}"
 
     plant = CartedPlant.find(plant_id)
     next_watering_date = last_watered_date + plant.days_to_water.days
